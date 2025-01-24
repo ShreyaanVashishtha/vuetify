@@ -24,8 +24,8 @@ const aliases: IconAliases = {
   checkboxOff: 'fa-square-o',
   checkboxIndeterminate: 'fa-minus-square',
   delimiter: 'fa-circle', // for carousel
-  sortAsc: 'fa-sort-up',
-  sortDesc: 'fa-sort-down',
+  sortAsc: 'fa-arrow-up',
+  sortDesc: 'fa-arrow-down',
   expand: 'fa-chevron-down',
   menu: 'fa-bars',
   subgroup: 'fa-caret-down',
@@ -44,6 +44,9 @@ const aliases: IconAliases = {
   plus: 'fa-plus',
   minus: 'fa-minus',
   calendar: 'fa-calendar',
+  treeviewCollapse: 'fa-caret-down',
+  treeviewExpand: 'fa-caret-right',
+  eyeDropper: 'fa-eye-dropper',
 }
 
 const fa: IconSet = {

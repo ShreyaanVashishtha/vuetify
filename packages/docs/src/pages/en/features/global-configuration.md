@@ -1,5 +1,4 @@
 ---
-emphasized: true
 meta:
   title: Global configuration
   description: Vuetify.config is an object containing global configuration options that modify the bootstrapping of your project.
@@ -8,13 +7,17 @@ related:
   - /features/accessibility/
   - /features/treeshaking/
   - /features/blueprints/
+features:
+  report: true
 ---
 
 # Global configuration
 
 Vuetify allows you to set default prop values globally or per component when setting up your application. Using this functionality you can for example disable **ripple** on all components, or set the default **elevation** for all sheets or buttons.
 
-<entry />
+<PageFeatures />
+
+<PromotedEntry />
 
 ## Setup
 
@@ -61,7 +64,7 @@ This is used internally by some components already:
 ## Global class and styles
 
 ::: success
-This feature was introduced in [v3.2.0 (Orion)](https://github.com/vuetifyjs/vuetify/releases/tag/v3.2.0)
+This feature was introduced in [v3.2.0 (Orion)](/getting-started/release-notes/?version=v3.2.0)
 :::
 
 Define global classes and styles for all [built-in](/components/all/) components; including [virtual](/features/aliasing/#virtual-component-defaults) ones. This provides an immense amount of utility when building your application's design system and it reduces the amount of duplicated code in your templates.
@@ -112,6 +115,10 @@ export default createVuetify({
   },
 })
 ```
+
+::: warning
+  `class` and `style` cannot be used in the `global` object, only in specific components.
+:::
 
 ## Using with virtual components
 
@@ -209,7 +216,7 @@ There are some cases where a default class or style could be unintentionally pas
 ## Using in custom components
 
 ::: success
-This feature was introduced in [v3.2.0 (Orion)](https://github.com/vuetifyjs/vuetify/releases/tag/v3.2.0)
+This feature was introduced in [v3.2.0 (Orion)](/getting-started/release-notes/?version=v3.2.0)
 :::
 
 Hook into the Vuetify defaults engine and configure your custom components the same way that we do. This feature makes it super easy to homogenize functionality across your application and reduce the amount of duplicated code.
@@ -260,7 +267,7 @@ In your template, assign the return value of `defineProps` to a variable and pas
 </script>
 ```
 
-Notice that we have to explicltly use the `props` object in the template. This is because Vue automatically unwraps the values in `defineProps`.
+Notice that we have to explicitly use the `props` object in the template. This is because Vue automatically unwraps the values in `defineProps`.
 
 ```diff
 -<div>I am {{ foo }}</div>
