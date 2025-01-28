@@ -1,6 +1,12 @@
 export default {
   badge: 'Insignă',
+  open: 'Open',
   close: 'Închideți',
+  dismiss: 'Dismiss',
+  confirmEdit: {
+    ok: 'OK',
+    cancel: 'Anulează',
+  },
   dataIterator: {
     noResultsText: 'Nu s-au găsit înregistrări corespunzătoare',
     loadingText: 'Se încarcă articolele...',
@@ -27,64 +33,75 @@ export default {
     pageText: '{0}-{1} din {2}',
   },
   dateRangeInput: {
-    divider: 'to',
+    divider: 'până la',
   },
   datePicker: {
-    ok: 'OK',
-    cancel: 'Cancel',
+    itemsSelected: '{0} selected',
     range: {
-      title: 'Select dates',
-      header: 'Enter dates',
+      title: 'Selectați datele',
+      header: 'Introduceți datele',
     },
-    title: 'Select date',
-    header: 'Enter date',
+    title: 'Selectați data',
+    header: 'Introduceți data',
     input: {
-      placeholder: 'Enter date',
+      placeholder: 'Introduceți data',
     },
   },
   noDataText: 'Nu există date disponibile',
   carousel: {
-    prev: 'Grafica anterioară',
-    next: 'Grafica următoare',
+    prev: 'Vizualul anterior',
+    next: 'Vizualul următor',
     ariaLabel: {
       delimiter: 'Slide carusel {0} din {1}',
     },
   },
   calendar: {
     moreEvents: 'încă {0}',
+    today: 'Today',
   },
   input: {
-    clear: 'Clear {0}',
-    prependAction: '{0} prepended action',
-    appendAction: '{0} appended action',
+    clear: 'Șterge {0}',
+    prependAction: '{0} acțiune de inserare la început',
+    appendAction: '{0} acțiune de inserare la sfârșit',
+    otp: 'Please enter OTP character {0}',
   },
   fileInput: {
     counter: '{0} fișiere',
     counterSize: '{0} fișiere ({1} în total)',
   },
+  fileUpload: {
+    title: 'Drag and drop files here',
+    divider: 'or',
+    browse: 'Browse Files',
+  },
   timePicker: {
     am: 'AM',
     pm: 'PM',
+    title: 'Select Time',
   },
   pagination: {
     ariaLabel: {
-      root: 'Navigare prin paginare',
+      root: 'Navigare prin pagini',
       next: 'Pagina următoare',
       previous: 'Pagina anterioară',
       page: 'Mergeți la pagina {0}',
       currentPage: 'Pagina curentă, pagina {0}',
-      first: 'First page',
-      last: 'Last page',
+      first: 'Prima pagină',
+      last: 'Ultima pagină',
     },
+  },
+  stepper: {
+    next: 'Next',
+    prev: 'Previous',
   },
   rating: {
     ariaLabel: {
       item: 'Rating de {0} din {1}',
     },
   },
-  loading: 'Loading...',
+  loading: 'Se încarcă...',
   infiniteScroll: {
-    loadMore: 'Load more',
-    empty: 'No more',
+    loadMore: 'Încarcă mai multe',
+    empty: 'Nu mai există',
   },
 }

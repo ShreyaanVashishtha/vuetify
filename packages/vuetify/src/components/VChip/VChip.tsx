@@ -68,7 +68,7 @@ export const makeVChipProps = propsFactory({
   draggable: Boolean,
   filter: Boolean,
   filterIcon: {
-    type: String,
+    type: IconValue,
     default: '$complete',
   },
   label: Boolean,
@@ -141,6 +141,9 @@ export const VChip = genericComponent<VChipSlots>()({
     const closeProps = computed(() => ({
       'aria-label': t(props.closeLabel),
       onClick (e: MouseEvent) {
+        e.preventDefault()
+        e.stopPropagation()
+
         isActive.value = false
 
         emit('click:close', e)
@@ -183,6 +186,7 @@ export const VChip = genericComponent<VChipSlots>()({
               'v-chip--link': isClickable.value,
               'v-chip--filter': hasFilter,
               'v-chip--pill': props.pill,
+              [`${props.activeClass}`]: props.activeClass && link.isActive?.value,
             },
             themeClasses.value,
             borderClasses.value,
@@ -201,11 +205,11 @@ export const VChip = genericComponent<VChipSlots>()({
           ]}
           disabled={ props.disabled || undefined }
           draggable={ props.draggable }
-          href={ link.href.value }
           tabindex={ isClickable.value ? 0 : undefined }
           onClick={ onClick }
           onKeydown={ isClickable.value && !isLink.value && onKeyDown }
           v-ripple={[isClickable.value && props.ripple, null]}
+          { ...link.linkProps }
         >
           { genOverlays(isClickable.value, 'v-chip') }
 
@@ -227,7 +231,7 @@ export const VChip = genericComponent<VChipSlots>()({
                     defaults={{
                       VIcon: { icon: props.filterIcon },
                     }}
-                    v-slot:default={ slots.filter }
+                    v-slots:default={ slots.filter }
                   />
                 )}
               </div>
@@ -274,7 +278,7 @@ export const VChip = genericComponent<VChipSlots>()({
             </div>
           )}
 
-          <div class="v-chip__content">
+          <div class="v-chip__content" data-no-activator="">
             { slots.default?.({
               isSelected: group?.isSelected.value,
               selectedClass: group?.selectedClass.value,
@@ -326,9 +330,11 @@ export const VChip = genericComponent<VChipSlots>()({
           )}
 
           { hasClose && (
-            <div
+            <button
               key="close"
               class="v-chip__close"
+              type="button"
+              data-testid="close-chip"
               { ...closeProps.value }
             >
               { !slots.close ? (
@@ -349,7 +355,7 @@ export const VChip = genericComponent<VChipSlots>()({
                   v-slots:default={ slots.close }
                 />
               )}
-            </div>
+            </button>
           )}
         </Tag>
       )

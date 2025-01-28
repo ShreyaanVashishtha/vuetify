@@ -14,11 +14,7 @@ related:
 
 Experiment and use in-development components before they're released.
 
-![Labs Entry](https://cdn.vuetifyjs.com/docs/images/entry/labs-entry.png)
-
-----
-
-<entry />
+<PageFeatures />
 
 ## What is Labs? { id=what-is-labs }
 
@@ -30,15 +26,15 @@ Components available through Labs are considered **NOT** production ready and on
 
 ## Usage
 
-Using a Labs component is as simple as importing from `vuetify/labs`. The following example shows how to import and bootstrap `v-data-table` in your component:
+Using a Labs component is as simple as importing from `vuetify/labs`. The following example shows how to import and bootstrap `v-picker` in your component:
 
 ```html
 <template>
-  <v-data-table />
+  <v-picker />
 </template>
 
 <script setup>
-  import { VDataTable } from 'vuetify/labs/VDataTable'
+  import { VPicker } from 'vuetify/labs/VPicker'
 </script>
 ```
 
@@ -46,16 +42,16 @@ Alternatively you can make the component available globally by importing it in y
 
 ```js { resource="src/plugins/vuetify.js" }
 import { createVuetify } from 'vuetify'
-import { VDataTable } from 'vuetify/labs/VDataTable'
+import { VPicker } from 'vuetify/labs/VPicker'
 
 export default createVuetify({
   components: {
-    VDataTable,
+    VPicker,
   },
 })
 ```
 
-When Vuetify instantiates it will register `VDataTable` as a usable component within templates.
+When Vuetify instantiates it will register `VPicker` as a usable component within templates.
 
 If you wish to install all available Vuetify components use the following code snippet:
 
@@ -72,37 +68,22 @@ export default createVuetify({
 })
 ```
 
-<promoted slug="vuetify-discord" />
+<PromotedEntry />
 
 ## Available Components
 
 The following is a list of available and up-and-coming components for use with Labs:
 
-| Component | Description |
-| - | - |
-| **Data table** | [Basics](/components/data-tables/basics/) - [Headers](/components/data-tables/headers/) - [Sorting](/components/data-tables/sorting/) - [Pagination](/components/data-tables/pagination/) - [Filtering](/components/data-tables/filtering/) - [Grouping](/components/data-tables/grouping/) |
-| [v-data-table](/api/v-data-table/) | Primary Component |
-| [v-data-table-server](/api/v-data-table-server/) | Data table component for handling data from a remote server |
-| [v-data-table-virtual](/api/v-data-table-virtual/) | Data table component for handling large amounts of rows |
-| [v-data-table-row](/api/v-data-table-row/) | Data table reusable row component |
-| [v-data-table-rows](/api/v-data-table-rows/) | Data table reusable rows component |
-| [v-data-table-column](/api/v-data-table-column/) | Data table reusable column component |
-| **Skeleton loader** | [Usage](/components/skeleton-loaders/) |
-| [v-skeleton-loader](/api/v-skeleton-loader/) | Primary Component |
-| **Infinite scroll** | [Usage](/components/infinite-scroller/) |
-| [v-infinite-scroll](/api/v-infinite-scroll/) | Primary Component |
-| **Bottom sheet** | [Usage](/components/bottom-sheets/) |
-| [v-bottom-sheet](/api/v-bottom-sheet/) | Primary Component |
-| **Date picker** | [Usage](/components/date-pickers/) |
-| [v-date-picker](/api/v-date-picker/) | Primary Component |
-
-### Up Next
-
-| Component | Release Target |
-| - | - |
-| v-calendar | ~~Q1~~* Q2 2023 |
-
-<small>*Q1 2023 was the original target, but due to the complexity of the component, it has been pushed back to Q2 2023.</small>
+| Component | Description | Min Version |
+| - | - | - |
+| [v-calendar](/components/calendars/) | A calendar component | [v3.4.9](/getting-started/release-notes/?version=v3.4.9) |
+| [v-date-input](/components/date-inputs/) | A date input component | [v3.6.0](/getting-started/release-notes/?version=v3.6.0) |
+| [v-pull-to-refresh](/components/pull-to-refresh/) | A component to update content by screen swipes | [v3.6.0](/getting-started/release-notes/?version=v3.6.0) |
+| [v-number-input](/components/number-input/) | A component for numerical data | [v3.5.10](/getting-started/release-notes/?version=v3.5.10) |
+| [v-snackbar-queue](/components/snackbar-queue/) | A queue for snackbars | [v3.6.0](/getting-started/release-notes/?version=v3.6.0) |
+| [v-stepper-vertical](/components/vertical-steppers/) | Vertical version of v-stepper | [v3.6.5](/getting-started/release-notes/?version=v3.6.5) |
+| [v-time-picker](/components/time-pickers/) | A time-picker component | [v3.5.12](/getting-started/release-notes/?version=v3.5.12) |
+| [v-treeview](/components/treeview/) | A treeview component | [v3.5.9](/getting-started/release-notes/?version=v3.5.9) |
 
 ::: warning
 Lab component APIs are **NOT** finalized and can and will change. You should **EXPECT** for things to break during the course of development.
