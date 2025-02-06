@@ -1,10 +1,10 @@
 // Utilities
-import { inject, reactive, shallowRef, toRefs, watchEffect } from 'vue'
-import { mergeDeep } from '@/util'
+import { computed, inject, reactive, shallowRef, toRefs, watchEffect } from 'vue'
+import { getCurrentInstanceName, mergeDeep, propsFactory } from '@/util'
 import { IN_BROWSER, SUPPORTS_TOUCH } from '@/util/globals'
 
 // Types
-import type { InjectionKey, Ref } from 'vue'
+import type { InjectionKey, PropType, Ref } from 'vue'
 
 export const breakpoints = ['sm', 'md', 'lg', 'xl', 'xxl'] as const // no xs
 
@@ -14,6 +14,11 @@ export type DisplayBreakpoint = 'xs' | Breakpoint
 
 export type DisplayThresholds = {
   [key in DisplayBreakpoint]: number
+}
+
+export interface DisplayProps {
+  mobile?: boolean | null
+  mobileBreakpoint?: number | DisplayBreakpoint
 }
 
 export interface DisplayOptions {
@@ -209,10 +214,41 @@ export function createDisplay (options?: DisplayOptions, ssr?: SSROptions): Disp
   return { ...toRefs(state), update, ssr: !!ssr }
 }
 
-export function useDisplay () {
+export const makeDisplayProps = propsFactory({
+  mobile: {
+    type: Boolean as PropType<boolean | null>,
+    default: false,
+  },
+  mobileBreakpoint: [Number, String] as PropType<number | DisplayBreakpoint>,
+}, 'display')
+
+export function useDisplay (
+  props: DisplayProps = { mobile: null },
+  name = getCurrentInstanceName(),
+) {
   const display = inject(DisplaySymbol)
 
   if (!display) throw new Error('Could not find Vuetify display injection')
 
-  return display
+  const mobile = computed(() => {
+    if (props.mobile) {
+      return true
+    } else if (typeof props.mobileBreakpoint === 'number') {
+      return display.width.value < props.mobileBreakpoint
+    } else if (props.mobileBreakpoint) {
+      return display.width.value < display.thresholds.value[props.mobileBreakpoint]
+    } else if (props.mobile === null) {
+      return display.mobile.value
+    } else {
+      return false
+    }
+  })
+
+  const displayClasses = computed(() => {
+    if (!name) return {}
+
+    return { [`${name}--mobile`]: mobile.value }
+  })
+
+  return { ...display, displayClasses, mobile }
 }

@@ -1,6 +1,12 @@
 export default {
   badge: 'rozet',
+  open: 'Open',
   close: 'Kapat',
+  dismiss: 'Dismiss',
+  confirmEdit: {
+    ok: 'OK',
+    cancel: 'Cancel',
+  },
   dataIterator: {
     noResultsText: 'Eşleşen veri bulunamadı',
     loadingText: 'Yükleniyor... Lütfen bekleyin.',
@@ -30,8 +36,7 @@ export default {
     divider: 'to',
   },
   datePicker: {
-    ok: 'OK',
-    cancel: 'Cancel',
+    itemsSelected: '{0} selected',
     range: {
       title: 'Select dates',
       header: 'Enter dates',
@@ -52,19 +57,27 @@ export default {
   },
   calendar: {
     moreEvents: '{0} tane daha',
+    today: 'Today',
   },
   input: {
     clear: 'Clear {0}',
     prependAction: '{0} prepended action',
     appendAction: '{0} appended action',
+    otp: 'Please enter OTP character {0}',
   },
   fileInput: {
     counter: '{0} dosya',
     counterSize: '{0} dosya (toplamda {1})',
   },
+  fileUpload: {
+    title: 'Drag and drop files here',
+    divider: 'or',
+    browse: 'Browse Files',
+  },
   timePicker: {
     am: 'AM',
     pm: 'PM',
+    title: 'Select Time',
   },
   pagination: {
     ariaLabel: {
@@ -76,6 +89,10 @@ export default {
       first: 'First page',
       last: 'Last page',
     },
+  },
+  stepper: {
+    next: 'Next',
+    prev: 'Previous',
   },
   rating: {
     ariaLabel: {

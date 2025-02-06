@@ -1,6 +1,12 @@
 export default {
   badge: 'Abzeichen',
+  open: 'Öffnen',
   close: 'Schließen',
+  dismiss: 'Verwerfen',
+  confirmEdit: {
+    ok: 'OK',
+    cancel: 'Abbrechen',
+  },
   dataIterator: {
     noResultsText: 'Keine Elemente gefunden',
     loadingText: 'Lade Elemente...',
@@ -27,19 +33,18 @@ export default {
     pageText: '{0}-{1} von {2}',
   },
   dateRangeInput: {
-    divider: 'to',
+    divider: 'bis',
   },
   datePicker: {
-    ok: 'OK',
-    cancel: 'Cancel',
+    itemsSelected: '{0} ausgewählt',
     range: {
-      title: 'Select dates',
-      header: 'Enter dates',
+      title: 'Daten auswählen',
+      header: 'Daten eingeben',
     },
-    title: 'Select date',
-    header: 'Enter date',
+    title: 'Datum auswählen',
+    header: 'Datum eingeben',
     input: {
-      placeholder: 'Enter date',
+      placeholder: 'Datum eingeben',
     },
   },
   noDataText: 'Keine Daten vorhanden',
@@ -52,19 +57,27 @@ export default {
   },
   calendar: {
     moreEvents: '{0} mehr',
+    today: 'Heute',
   },
   input: {
-    clear: 'Clear {0}',
-    prependAction: '{0} prepended action',
-    appendAction: '{0} appended action',
+    clear: '{0} leeren',
+    prependAction: '{0} vorangestellte Aktion',
+    appendAction: '{0} angehängte Aktion',
+    otp: 'Bitte OTP-Zeichen {0} eingeben',
   },
   fileInput: {
     counter: '{0} Dateien',
     counterSize: '{0} Dateien ({1} gesamt)',
   },
+  fileUpload: {
+    title: 'Datei hier ablegen',
+    divider: 'oder',
+    browse: 'Dateien durchsuchen',
+  },
   timePicker: {
     am: 'AM',
     pm: 'PM',
+    title: 'Uhrzeit auswählen',
   },
   pagination: {
     ariaLabel: {
@@ -73,18 +86,22 @@ export default {
       previous: 'Vorherige Seite',
       page: 'Gehe zu Seite {0}',
       currentPage: 'Aktuelle Seite, Seite {0}',
-      first: 'First page',
-      last: 'Last page',
+      first: 'Erste Seite',
+      last: 'Letzte Seite',
     },
+  },
+  stepper: {
+    next: 'Weiter',
+    prev: 'Zurück',
   },
   rating: {
     ariaLabel: {
-      item: 'Rating {0} of {1}',
+      item: 'Bewertung {0} von {1}',
     },
   },
-  loading: 'Loading...',
+  loading: 'Laden...',
   infiniteScroll: {
-    loadMore: 'Load more',
-    empty: 'No more',
+    loadMore: 'Mehr laden',
+    empty: 'Nichts weiteres',
   },
 }

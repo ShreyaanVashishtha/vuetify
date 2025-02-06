@@ -3,9 +3,18 @@ module.exports = {
     'vue/setup-compiler-macros': true,
   },
   rules: {
+    'no-undef': 'off',
     'vue/multi-word-component-names': 'off',
   },
   overrides: [
+    {
+      files: [
+        'src/components/**/*.vue',
+      ],
+      rules: {
+        'max-len': 'off',
+      },
+    },
     {
       files: [
         'src/examples/**/*.vue',

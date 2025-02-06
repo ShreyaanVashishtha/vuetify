@@ -1,6 +1,12 @@
 export default {
   badge: 'Bricka',
+  open: 'Open',
   close: 'Stäng',
+  dismiss: 'Dismiss',
+  confirmEdit: {
+    ok: 'OK',
+    cancel: 'Avbryt',
+  },
   dataIterator: {
     noResultsText: 'Hittade inga poster',
     loadingText: 'Laddar data...',
@@ -30,8 +36,7 @@ export default {
     divider: 'to',
   },
   datePicker: {
-    ok: 'OK',
-    cancel: 'Avbryt',
+    itemsSelected: '{0} selected',
     range: {
       title: 'Välj datum',
       header: 'Välj datum',
@@ -52,19 +57,27 @@ export default {
   },
   calendar: {
     moreEvents: '{0} fler',
+    today: 'Today',
   },
   input: {
     clear: 'Rensa {0}',
     prependAction: '{0} prepended action',
     appendAction: '{0} appended action',
+    otp: 'Please enter OTP character {0}',
   },
   fileInput: {
     counter: '{0} filer',
     counterSize: '{0} filer ({1})',
   },
+  fileUpload: {
+    title: 'Drag and drop files here',
+    divider: 'or',
+    browse: 'Browse Files',
+  },
   timePicker: {
     am: 'AM',
     pm: 'PM',
+    title: 'Select Time',
   },
   pagination: {
     ariaLabel: {
@@ -76,6 +89,10 @@ export default {
       first: 'Första sidan',
       last: 'Sista sidan',
     },
+  },
+  stepper: {
+    next: 'Next',
+    prev: 'Previous',
   },
   rating: {
     ariaLabel: {

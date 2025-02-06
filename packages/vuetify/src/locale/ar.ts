@@ -1,6 +1,12 @@
 export default {
   badge: 'شارة',
+  open: 'Open',
   close: 'إغلاق',
+  dismiss: 'Dismiss',
+  confirmEdit: {
+    ok: 'OK',
+    cancel: 'Cancel',
+  },
   dataIterator: {
     noResultsText: 'لم يتم إيجاد نتائج',
     loadingText: 'يتم جلب العناصر...',
@@ -30,8 +36,7 @@ export default {
     divider: 'to',
   },
   datePicker: {
-    ok: 'OK',
-    cancel: 'Cancel',
+    itemsSelected: '{0} selected',
     range: {
       title: 'Select dates',
       header: 'Enter dates',
@@ -52,19 +57,27 @@ export default {
   },
   calendar: {
     moreEvents: '{0} أكثر',
+    today: 'Today',
   },
   input: {
     clear: 'Clear {0}',
     prependAction: '{0} prepended action',
     appendAction: '{0} appended action',
+    otp: 'Please enter OTP character {0}',
   },
   fileInput: {
     counter: '{0} ملفات',
     counterSize: '{0} ملفات ({1} في المجموع)',
   },
+  fileUpload: {
+    title: 'Drag and drop files here',
+    divider: 'or',
+    browse: 'Browse Files',
+  },
   timePicker: {
     am: 'صباحاً',
     pm: 'مساءً',
+    title: 'Select Time',
   },
   pagination: {
     ariaLabel: {
@@ -76,6 +89,10 @@ export default {
       first: 'First page',
       last: 'Last page',
     },
+  },
+  stepper: {
+    next: 'Next',
+    prev: 'Previous',
   },
   rating: {
     ariaLabel: {

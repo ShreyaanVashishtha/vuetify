@@ -1,6 +1,12 @@
 export default {
   badge: 'Emblem',
+  open: 'Open',
   close: 'Luk',
+  dismiss: 'Dismiss',
+  confirmEdit: {
+    ok: 'OK',
+    cancel: 'Cancel',
+  },
   dataIterator: {
     noResultsText: 'Ingen matchende data fundet',
     loadingText: 'Indhenter data...',
@@ -30,16 +36,15 @@ export default {
     divider: 'to',
   },
   datePicker: {
-    ok: 'OK',
-    cancel: 'Cancel',
+    itemsSelected: '{0} selected',
     range: {
-      title: 'Select dates',
-      header: 'Enter dates',
+      title: 'Vælg datoer',
+      header: 'Indtast datoer',
     },
-    title: 'Select date',
-    header: 'Enter date',
+    title: 'Vælg dato',
+    header: 'Indtast dato',
     input: {
-      placeholder: 'Enter date',
+      placeholder: 'Indtast dato',
     },
   },
   noDataText: 'Ingen data tilgængelig',
@@ -52,19 +57,27 @@ export default {
   },
   calendar: {
     moreEvents: '{0} mere',
+    today: 'Today',
   },
   input: {
     clear: 'Clear {0}',
     prependAction: '{0} prepended action',
     appendAction: '{0} appended action',
+    otp: 'Please enter OTP character {0}',
   },
   fileInput: {
     counter: '{0} filer',
     counterSize: '{0} filer ({1} total)',
   },
+  fileUpload: {
+    title: 'Drag and drop files here',
+    divider: 'or',
+    browse: 'Browse Files',
+  },
   timePicker: {
     am: 'AM',
     pm: 'PM',
+    title: 'Select Time',
   },
   pagination: {
     ariaLabel: {
@@ -76,6 +89,10 @@ export default {
       first: 'First page',
       last: 'Last page',
     },
+  },
+  stepper: {
+    next: 'Next',
+    prev: 'Previous',
   },
   rating: {
     ariaLabel: {

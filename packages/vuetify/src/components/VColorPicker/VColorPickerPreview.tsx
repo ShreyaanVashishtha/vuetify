@@ -2,14 +2,24 @@
 import './VColorPickerPreview.sass'
 
 // Components
+import { VBtn } from '@/components/VBtn'
 import { VSlider } from '@/components/VSlider'
 
 // Composables
 import { makeComponentProps } from '@/composables/component'
 
 // Utilities
+import { onUnmounted } from 'vue'
 import { nullColor } from './util'
-import { defineComponent, HSVtoCSS, propsFactory, useRender } from '@/util'
+import {
+  defineComponent,
+  HSVtoCSS,
+  parseColor,
+  propsFactory,
+  RGBtoHSV,
+  SUPPORTS_EYE_DROPPER,
+  useRender,
+} from '@/util'
 
 // Types
 import type { PropType } from 'vue'
@@ -35,6 +45,21 @@ export const VColorPickerPreview = defineComponent({
   },
 
   setup (props, { emit }) {
+    const abortController = new AbortController()
+
+    onUnmounted(() => abortController.abort())
+
+    async function openEyeDropper () {
+      if (!SUPPORTS_EYE_DROPPER) return
+
+      const eyeDropper = new window.EyeDropper()
+      try {
+        const result = await eyeDropper.open({ signal: abortController.signal })
+        const colorHexValue = RGBtoHSV(parseColor(result.sRGBHex))
+        emit('update:color', { ...(props.color ?? nullColor), ...colorHexValue })
+      } catch (e) {}
+    }
+
     useRender(() => (
       <div
         class={[
@@ -46,6 +71,12 @@ export const VColorPickerPreview = defineComponent({
         ]}
         style={ props.style }
       >
+        { SUPPORTS_EYE_DROPPER && (
+          <div class="v-color-picker-preview__eye-dropper" key="eyeDropper">
+            <VBtn onClick={ openEyeDropper } icon="$eyeDropper" variant="plain" density="comfortable" />
+          </div>
+        )}
+
         <div class="v-color-picker-preview__dot">
           <div style={{ background: HSVtoCSS(props.color ?? nullColor) }} />
         </div>
