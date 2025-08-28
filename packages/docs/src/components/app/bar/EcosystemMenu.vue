@@ -8,6 +8,7 @@
       :items="items"
       activator="parent"
       width="200"
+      model-value
     />
   </AppBtn>
 </template>
@@ -25,6 +26,11 @@
       title: 'X',
       href: 'https://x.com/vuetifyjs',
       appendIcon: '$x',
+    },
+    {
+      title: 'bluesky',
+      href: 'https://bsky.app/profile/vuetify.bsky.social',
+      appendIcon: 'mdi-bluesky',
     },
     {
       title: 'Discord',
